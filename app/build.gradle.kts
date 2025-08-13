@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val mapboxToken: String = project.findProperty("MAPBOX_ACCESS_TOKEN") as? String ?: ""
+
 android {
     namespace = "com.bolla.sampleappmap11"
     compileSdk = 36
@@ -16,6 +18,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        resValue("string", "mapbox_access_token", mapboxToken)
     }
 
     buildTypes {
@@ -56,4 +60,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation("com.mapbox.maps:android:11.14.1")
+    implementation("com.mapbox.extension:maps-compose:11.14.1")
 }
