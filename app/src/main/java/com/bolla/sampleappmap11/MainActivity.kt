@@ -53,7 +53,7 @@ fun MainScreen() {
                 mapViewportState = rememberMapViewportState {
                     setCameraOptions {
                         zoom(19.0)
-                        center(Point.fromLngLat(19.091046, 47.484274))
+                        center(Point.fromLngLat(19.091175620535125, 47.48419256932472))
                         pitch(0.0)
                         bearing(0.0)
                     }
